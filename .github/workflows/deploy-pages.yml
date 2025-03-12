@@ -1,0 +1,46 @@
+name: Déploiement GitHub Pages
+
+on:
+  # Exécute le workflow lors des push sur la branche principale
+  push:
+    branches: ["main"]
+  
+  # Permet de lancer manuellement ce workflow depuis l'interface GitHub
+  workflow_dispatch:
+
+# Définit les permissions nécessaires pour le déploiement GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un seul déploiement à la fois
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Job de construction du site
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Configuration de Pages
+        uses: actions/configure-pages@v3
+      - name: Upload des artefacts
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+  
+  # Job de déploiement du site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Déploiement sur GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
