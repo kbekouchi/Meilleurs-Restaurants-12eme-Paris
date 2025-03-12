@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Les 10 Meilleurs Restaurants du 12ème arrondissement de Paris</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/filters.css">
 </head>
 <body>
     <header>
@@ -17,6 +18,53 @@
     <div class="container">
         <div class="intro">
             <p>Le 12ème arrondissement de Paris regorge de pépites culinaires. Entre le quartier de Bercy, la Gare de Lyon et le Bois de Vincennes, cet arrondissement offre une diversité gastronomique étonnante. Découvrez notre sélection des 10 meilleurs restaurants selon les avis Google Maps.</p>
+        </div>
+        
+        <!-- Section de filtrage -->
+        <div class="filter-section">
+            <h2 class="filter-title">Filtrer les restaurants</h2>
+            <form id="filter-form" class="filter-form">
+                <div class="filter-group">
+                    <label for="cuisine-filter" class="filter-label">Type de cuisine</label>
+                    <select id="cuisine-filter" class="filter-select">
+                        <option value="all">Toutes les cuisines</option>
+                        <option value="française">Française</option>
+                        <option value="chinoise">Chinoise</option>
+                        <option value="bistrot">Bistrot</option>
+                        <option value="bretonne">Bretonne</option>
+                        <option value="café">Café</option>
+                        <option value="méditerranéenne">Méditerranéenne</option>
+                        <option value="gastronomie">Gastronomie</option>
+                        <option value="cambodgienne">Cambodgienne</option>
+                        <option value="italienne">Italienne</option>
+                        <option value="brasserie">Brasserie</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="rating-filter" class="filter-label">Note minimale</label>
+                    <select id="rating-filter" class="filter-select">
+                        <option value="all">Toutes les notes</option>
+                        <option value="4.5">4.5 et plus</option>
+                        <option value="4.0">4.0 et plus</option>
+                        <option value="3.5">3.5 et plus</option>
+                        <option value="3.0">3.0 et plus</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label for="search-input" class="filter-label">Rechercher</label>
+                    <input type="text" id="search-input" class="filter-input" placeholder="Nom, adresse, cuisine...">
+                </div>
+                
+                <div class="filter-group filter-buttons">
+                    <button type="submit" class="filter-button">Filtrer</button>
+                    <button type="button" id="reset-filters" class="reset-button">Réinitialiser</button>
+                </div>
+            </form>
+            <div class="result-info">
+                <span id="result-count">10 restaurants trouvés</span>
+            </div>
         </div>
         
         <div class="restaurant-grid">
@@ -215,5 +263,8 @@
     <footer>
         <p class="footer-text">© 2025 - Les Meilleurs Restaurants du 12ème arrondissement de Paris - Données basées sur les avis Google Maps</p>
     </footer>
+    
+    <!-- Inclusion du JavaScript -->
+    <script src="js/filter.js"></script>
 </body>
 </html>
