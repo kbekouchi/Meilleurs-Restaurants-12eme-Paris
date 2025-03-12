@@ -5,6 +5,8 @@ Ce projet est un site web présentant une sélection des 10 meilleurs restaurant
 ## 📋 Contenu
 
 - Une page d'accueil avec une présentation des 10 restaurants sélectionnés
+- Système de filtrage par type de cuisine, note minimale et recherche par mot-clé
+- Carte interactive pour localiser les restaurants
 - Pour chaque restaurant : nom, type de cuisine, note, nombre d'avis, adresse et un commentaire client
 - Design responsive adapté à tous les appareils (desktop, tablette, mobile)
 
@@ -12,14 +14,17 @@ Ce projet est un site web présentant une sélection des 10 meilleurs restaurant
 
 - HTML5
 - CSS3 (Variables CSS, Flexbox, Grid)
+- JavaScript
+- Leaflet.js pour la carte interactive
+- OpenStreetMap pour les données cartographiques
 - Design responsive
 
-## 🚀 Fonctionnalités à venir
+## 🚀 Fonctionnalités implémentées
 
-- Intégration d'une carte interactive pour localiser les restaurants
-- Système de filtrage par type de cuisine et par note
-- Formulaire de contact pour suggérer de nouveaux restaurants
-- Galerie d'images pour chaque restaurant
+- ✅ **Système de filtrage** : Filtrer les restaurants par type de cuisine, note minimale et recherche textuelle
+- ✅ **Carte interactive** : Visualiser l'emplacement des restaurants sur une carte avec des marqueurs personnalisés
+- ✅ **Fiches détaillées** : Informations complètes sur chaque restaurant avec avis client
+- ✅ **Responsive design** : Expérience utilisateur optimale sur desktop, tablette et mobile
 
 ## 🌐 Comment voir le site
 
@@ -63,9 +68,22 @@ Si vous souhaitez contribuer sans avoir de connaissances techniques :
 /
 ├── index.html          # Page d'accueil
 ├── css/
-│   └── styles.css      # Styles du site
+│   ├── styles.css      # Styles principaux du site
+│   ├── filters.css     # Styles pour le système de filtrage
+│   └── map.css         # Styles pour la carte interactive
+├── js/
+│   ├── filter.js       # Script pour le système de filtrage
+│   └── map.js          # Script pour la carte interactive
 └── README.md           # Documentation
 ```
+
+## 🔮 Idées d'extensions futures
+
+- Ajout de la géolocalisation pour centrer la carte sur la position de l'utilisateur
+- Calcul d'itinéraire directement sur la carte
+- Système d'avis et de commentaires utilisateur
+- Galerie d'images pour chaque restaurant
+- Formulaire de contact pour suggérer de nouveaux restaurants
 
 ## 📄 Licence
 
