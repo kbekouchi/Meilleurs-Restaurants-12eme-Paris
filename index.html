@@ -6,6 +6,14 @@
     <title>Les 10 Meilleurs Restaurants du 12ème arrondissement de Paris</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/filters.css">
+    <link rel="stylesheet" href="css/map.css">
+    <!-- Inclusion de Leaflet pour la carte -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+            crossorigin=""></script>
 </head>
 <body>
     <header>
@@ -64,6 +72,31 @@
             </form>
             <div class="result-info">
                 <span id="result-count">10 restaurants trouvés</span>
+            </div>
+        </div>
+        
+        <!-- Section de carte interactive -->
+        <div class="map-section">
+            <h2 class="map-title">Carte des restaurants</h2>
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+            <div class="map-controls">
+                <button id="center-map" class="filter-button">Recentrer la carte</button>
+                <div class="map-legend">
+                    <div class="legend-item">
+                        <span class="legend-color" style="background-color: #d35400;"></span>
+                        <span>4.5 - 5.0</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background-color: #2980b9;"></span>
+                        <span>4.0 - 4.4</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color" style="background-color: #27ae60;"></span>
+                        <span>3.5 - 3.9</span>
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -266,5 +299,6 @@
     
     <!-- Inclusion du JavaScript -->
     <script src="js/filter.js"></script>
+    <script src="js/map.js"></script>
 </body>
 </html>
